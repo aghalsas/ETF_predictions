@@ -37,3 +37,7 @@ Increasing horizon size could give a larger gain for most ETF's however it's imp
 ## Blog
 
 https://aghalsasi-datascience.blogspot.com/2021/02/etf-predictions.html
+
+## Navigating the repository
+
+The main analysis and presentation notebook is ETF_predictions. The Analysis ans Analysis_LW are auxillary notebooks to run our ML algorithms on our data and generate a signal. The generated accuracy scores are stored in the folder results. The auxillary functions are defined in Auxillary_Functions, Classification_Functions, Create_Features and Reproducing_Liew_Mayster.
