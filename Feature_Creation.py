@@ -202,7 +202,21 @@ def create_features(df,rsi_window = 14,macd_feat = [12,26,9]):
     df.dropna(inplace=True)
     df = df.reset_index(drop=True)
     return df
+
+def mc_pvalue(df1,df2,samples=1000,one_tail=True):
+    mean_diff = abs(df1.mean() - df2.mean())
+    df_merge = pd.concat([df1,df2])
+    diff_means = []
+    for i in range(samples):
+        sample_1 = df_merge.sample(len(df1))
+        sample_2 = df_merge.drop(sample_1.index)
+        diff_means.append(sample_1.mean()-sample_2.mean())
+    if one_tail:
+        p_val = sum(np.array(diff_means) > mean_diff)/samples
+    else:
+        p_val = 2*sum(np.array(diff_means) > mean_diff)/samples
     
+    return p_val
 
 
 # In[ ]:
