@@ -36,4 +36,4 @@ Increasing horizon size could give a larger gain for most ETF's however it's imp
 
 ## Blog
 
-https://aghalsasi-datascience.blogspot.com/2020/01/northwind-dataset-statistical-analysis.html
+https://aghalsasi-datascience.blogspot.com/2021/02/etf-predictions.html
