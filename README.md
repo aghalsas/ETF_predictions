@@ -36,7 +36,7 @@ When we combine the ETF's we see a signal even for horizon of one day for most o
 ![Alt text](/plots/horizon5_dist.png?raw=true "Horizon 5 day")
 ![Alt text](/plots/horizon10_dist.png?raw=true "Horizon 10 day")
 
-Increasing horizon size could give a larger gain for most ETF's however it's important to remember once again that our analysis only suggests that we might be able to get better accuracy compared to a random ETF, however our returns could be worse compared to zero. Increasing horizon size could also mean lower overall returns, even for higher accuracy since profits compund. The ideal horizon should be investigated. We should also see if this stands the test of live markets.
+Increasing horizon size could give a larger gain for most ETF's however it's important to remember once again that our analysis only suggests that we might be able to get better accuracy compared to a random ETF, however our returns could be worse compared to zero. Increasing horizon size could also mean lower overall returns, even for higher accuracy since profits compund. The ideal horizon should be investigated. We should also see if this stands the test of live markets. A better baseline than random walk needs to be constructed
 
 
 ## Blog
