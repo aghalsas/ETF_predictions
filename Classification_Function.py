@@ -56,7 +56,7 @@ def daily_prediction_analysis(filename,rand_state,CV= 5,verbose=False,do_forest=
     
     ### Continuous features
     continuous = ['1day_pct', '2day_pct', '3day_pct', '4day_pct', '5day_pct', '7day_pct',
-                  '1day_pct_cs','ewma_7', 'ewma_50', 'ewma_200', 'RSI', 'MACD','Volume','day_var','open_close','open_prev_close','high_close']
+                  '1day_pct_cs','ewma_7', 'ewma_50', 'ewma_200', 'RSI', 'MACD','Volume','day_var','open_close','open_prev_close','high_close','days_from_max', 'pct_from_max']
     ### Discrete features
     discrete = ['prev_hot_streak','prev_cold_streak', 'current_hot_streak', 'current_cold_streak',
                 'RSI_overbought','RSI_oversold',
