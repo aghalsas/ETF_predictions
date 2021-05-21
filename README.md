@@ -32,6 +32,9 @@ Increase horizon size and combine ETF's together, keeping the features the same.
 
 When we combine the ETF's we see a signal even for horizon of one day for most of our ETF's.  For SPY however as we increased the horizon size for our predictions, the predictions got worse with no prediciton compared to the random ETF's for horizon size of 10. This is contrary to what's shown in Liew and Mayster. It is not clear why we reach different conclusions. A difference could be because they complain that their information gain to a randomly generated distribution from univariate variables, but we compare it to a random walk which should be a better comparison in theory. This needs to be investigated further.
 
+![Alt text](/plots/horizon1_dist?raw=true "Horizon 1 day")
+![Alt text](/plots/horizon5_dist?raw=true "Horizon 5 day")
+![Alt text](/plots/horizon10_dist?raw=true "Horizon 10 day")
 
 Increasing horizon size could give a larger gain for most ETF's however it's important to remember once again that our analysis only suggests that we might be able to get better accuracy compared to a random ETF, however our returns could be worse compared to zero. Increasing horizon size could also mean lower overall returns, even for higher accuracy since profits compund. The ideal horizon should be investigated. We should also see if this stands the test of live markets.
 
