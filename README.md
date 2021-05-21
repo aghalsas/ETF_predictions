@@ -17,7 +17,7 @@ We will have two objectives in this work
 
 We find a signal in **SPY, OIH, IWM, IYR, LQD**. In most of the cases RF or XGB algorithm gives a positive signal.
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](/plots/signal.png?raw=true "Signal")
 
 However before making such a bold claim it's important to remember that our analysis only suggests that we might be able to get better accuracy compared to a random ETF, however our returns could be worse compared to zero. Also we only consider 5 different random ETF's. It's possible that considering more, we would get a p-value above our threshold of 0.05. A more detailed statistical analysis is needed to address this question. It is of interest why this method works on certain ETF's and not others and should be investigated further.
 
