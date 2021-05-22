@@ -197,7 +197,21 @@ def create_features(df,rsi_window = 14,macd_feat = [12,26,9]):
     df['current_hot_prev_cold'] = df['current_hot_streak'] - df['prev_cold_streak']
     df['current_cold_prev_hot'] = df['current_cold_streak'] - df['prev_hot_streak']
     
-    
+    ##Calculating days since max
+    current_max = df['Adj Close'][0]
+    df['days_from_max'] = np.zeros(df.shape[0])
+    df['pct_from_max'] = np.zeros(df.shape[0])
+    #print('blah')
+    for i in range(1,df.shape[0]):
+        if df['Adj Close'][i] > current_max:
+            current_max = df['Adj Close'][i]
+         #   print(current_max)
+        else:
+            df['days_from_max'][i] = df['days_from_max'][i-1]+1
+            df['pct_from_max'][i] = (df['Adj Close'][i]-current_max)/current_max
+        #print(df['days_from_max'][i])
+        
+        
     
     df.dropna(inplace=True)
     df = df.reset_index(drop=True)
