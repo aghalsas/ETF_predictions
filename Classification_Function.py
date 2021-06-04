@@ -160,15 +160,15 @@ def daily_prediction_analysis(filename,rand_state,CV= 5,verbose=False,do_forest=
     
     ### SVM poly
     if do_svm==True:
-        svm_clf_poly = svm.SVC(kernel='poly')
-        r_range =  np.array([0.25,0.5, 1,2,4])
-        gamma_range =  np.array([0.0001,0.001, 0.01,0.1])
-        d_range = np.array([2,3, 4])
-        param_grid = dict(gamma=gamma_range, degree=d_range, coef0=r_range)
-        svm_grid_search_poly = GridSearchCV(svm_clf_poly, param_grid, cv=CV)
+        svm_clf_poly = svm.SVC(kernel='rbf')
+        C_range =  np.array([0.01,0.1, 1,10,100,1000])
+        gamma_range =  np.array(['scale','auto', 0.01,0.1,1])
+        param_grid = dict(gamma=gamma_range, C=C_range)
+        svm_grid_search_poly = GridSearchCV(svm_clf_poly, param_grid, cv=3,verbose=1)
         svm_grid_search_poly.fit(X_train, y_train)
         best_svm = svm_grid_search_poly.best_params_
         y_hat_test_svm_poly = svm_grid_search_poly.predict(X_test)
+
         SVM_poly_dict = {'model':'SVM_poly','precision':precision_score(y_hat_test_svm_poly,y_test),'recall':recall_score(y_hat_test_svm_poly,y_test),
                'accuracy':accuracy_score(y_hat_test_svm_poly,y_test),'f1':f1_score(y_hat_test_svm_poly,y_test),
                 'return':np.nansum((np.array(X_test['1day_pct'].shift(-1))*((np.array(y_hat_test_svm_poly)-1/2)*2))),
